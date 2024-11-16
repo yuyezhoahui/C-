@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC337B2-4417-4A6C-9AD5-6790AF136D12}|TutorialZero_1\\TutorialZero_1.vcxproj|D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_1\\TutorialZero_1\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2DC337B2-4417-4A6C-9AD5-6790AF136D12}|TutorialZero_1\\TutorialZero_1.vcxproj|solutionrelative:TutorialZero_1\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "1e3c3a50-90c5-47bd-8867-9da0af54002f",
+        "Display": 1,
+        "X": -4,
+        "Y": 453,
+        "Width": 728,
+        "Height": 783,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "sourse.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_1\\TutorialZero_1\\sourse.cpp",
+              "RelativeDocumentMoniker": "TutorialZero_1\\sourse.cpp",
+              "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_1\\TutorialZero_1\\sourse.cpp",
+              "RelativeToolTip": "TutorialZero_1\\sourse.cpp",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAAAJYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-16T05:51:56.169Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

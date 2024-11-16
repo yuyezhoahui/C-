@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C\u002B\u002BGameLearn\\01\\C-\\Demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{764D2A75-85B4-4616-B863-A4CD33BF9720}|Demo\\Demo.vcxproj|D:\\C\u002B\u002BGameLearn\\01\\C-\\Demo\\Demo\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{764D2A75-85B4-4616-B863-A4CD33BF9720}|Demo\\Demo.vcxproj|solutionrelative:Demo\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002BGameLearn\\01\\C-\\Demo\\Demo\\Source.cpp",
+              "RelativeDocumentMoniker": "Demo\\Source.cpp",
+              "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\Demo\\Demo\\Source.cpp*",
+              "RelativeToolTip": "Demo\\Source.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-16T05:21:07.065Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
