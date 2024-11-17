@@ -106,6 +106,8 @@ int main()
 			}
 		}
 
+
+		//玩家移动
 		if (is_move_up)
 		{
 			player_pos.y -= PLAYER_SPEED;
