@@ -1,16 +1,73 @@
 #include <iostream>
 #include <graphics.h>
 #include <string>
+#include <vector>
+#include "head.h"
 
 int idx_current_anim = 0;//储存当前动画的帧索引
 
 const int PLAYER_ANIM_NUM = 6;//定义动画帧总数为常量6
 
+const int PLAYER_WIDTH = 80; //玩家宽度
+const int PLAYER_HEIGHT = 80;//玩家高度
+const int SHADOW_WIDTH = 32; //阴影宽度
+
 IMAGE img_player_left[PLAYER_ANIM_NUM];
 IMAGE img_player_right[PLAYER_ANIM_NUM];
+IMAGE img_shadow;
 
 POINT player_pos = { 500,500 };//玩家位置
 int PLAYER_SPEED = 5;
+
+class Animation
+{
+public:
+	Animation(LPCTSTR path,int num,int interval)
+	{
+		interval_ms = interval;
+
+		TCHAR path_file[256];
+		for (size_t i = 0; i < num ;i++)
+		{
+			_stprintf_s(path_file, path, i);
+
+			IMAGE* frame = new IMAGE();
+			loadimage(frame,path_file);
+			frame_list.push_back(frame);
+		}
+	}
+
+	~Animation()
+	{
+		for (size_t i = 0; i < frame_list.size(); i++)
+		{
+			delete frame_list[i];
+		}
+	}
+
+	void Play(int x,int y,int delta /*表示距离上一次调用函数时间过去了多久*/)
+	{
+		timer += delta;
+
+		if (timer >= interval_ms)
+		{
+
+			idx_frame = (idx_frame + 1) % frame_list.size();
+			timer = 0;
+
+			
+
+		}
+		putimage_alpha(x, y, frame_list[idx_frame]);
+		
+	}
+
+private:
+	int timer = 0;//动画计时器
+	int idx_frame = 0;//动画帧索引
+	int interval_ms = 0;//帧间隔
+	std::vector<IMAGE*> frame_list;
+};
 
 
 #pragma comment(lib, "MSIMG32.LIB")
@@ -23,20 +80,50 @@ inline void putimage_alpha(int x, int y, IMAGE* img)
 		GetImageHDC(img), 0, 0, w, h, { AC_SRC_OVER,0,255,AC_SRC_ALPHA });
 }
 
-void LoadAnimation()
+//void LoadAnimation()
+//{
+//	for (size_t i = 0; i < PLAYER_ANIM_NUM; i++)
+//	{
+//		std::wstring path = L"img/paimon_left_" + std::to_wstring(i) + L".png";
+//		loadimage(&img_player_left[i], path.c_str());
+//	}
+//
+//	for (size_t i = 0; i < PLAYER_ANIM_NUM; i++)
+//	{
+//		std::wstring path = L"img/paimon_left_" + std::to_wstring(i) + L".png";
+//		loadimage(&img_player_right[i], path.c_str());
+//	}
+//
+//}
+
+Animation anim_left_player(_T("img/paimon_left_%d.png"), 6, 45);
+Animation anim_right_player(_T("img/paimon_right_%d.png"), 6, 45);
+
+void DrawPlayer(int delta, int dir_x)
 {
-	for (size_t i = 0; i < PLAYER_ANIM_NUM; i++)
+	
+	int pos_shadow_x = player_pos.x + (PLAYER_WIDTH / 2 - SHADOW_WIDTH / 2);
+	int pos_shadow_y = player_pos.y + PLAYER_HEIGHT - 8;
+	putimage_alpha(pos_shadow_x, pos_shadow_y, &img_shadow);
+
+	static bool facing_left = false;//判断玩家动画是否面向左侧
+	if (dir_x < 0)
 	{
-		std::wstring path = L"img/paimon_left_" + std::to_wstring(i) + L".png";
-		loadimage(&img_player_left[i], path.c_str());
+		facing_left = true;
+	}
+	else if (dir_x > 0)
+	{
+		facing_left = false;
 	}
 
-	for (size_t i = 0; i < PLAYER_ANIM_NUM; i++)
+	if (facing_left)
 	{
-		std::wstring path = L"img/paimon_left_" + std::to_wstring(i) + L".png";
-		loadimage(&img_player_right[i], path.c_str());
+		anim_left_player.Play(player_pos.x,player_pos.y,delta);
 	}
-
+	else
+	{
+		anim_right_player.Play(player_pos.x, player_pos.y, delta);
+	}
 }
 
 int main()
@@ -55,9 +142,10 @@ int main()
 
 
 
-
+	loadimage(&img_shadow, _T("img/shadow_player.png"));
 	loadimage(&img_background,_T("img/background.png"));//加载图片位置
-	LoadAnimation();
+	
+	//LoadAnimation();
 
 
 	BeginBatchDraw();
@@ -127,19 +215,20 @@ int main()
 
 
 
-		static int counter = 0;//记录当前动画帧一共播放了几个游戏帧
-		if (++counter % 5 == 0)//每5个游戏帧播放一个动画帧
-		{
-			idx_current_anim++;
-		}
+		//static int counter = 0;//记录当前动画帧一共播放了几个游戏帧
+		//if (++counter % 5 == 0)//每5个游戏帧播放一个动画帧
+		//{
+		//	idx_current_anim++;
+		//}
 
-		//动画循环播放
-		idx_current_anim = idx_current_anim % PLAYER_ANIM_NUM;
+		////动画循环播放
+		//idx_current_anim = idx_current_anim % PLAYER_ANIM_NUM;
 
 		cleardevice();
 
 		putimage(0, 0, &img_background);//放置背景图片
-		putimage_alpha(player_pos.x, player_pos.y, &img_player_left[idx_current_anim]);//派蒙序列动画
+		//putimage_alpha(player_pos.x, player_pos.y, &img_player_left[idx_current_anim]);//派蒙序列动画
+		DrawPlayer(1000 / 144, is_move_right - is_move_left);
 
 		FlushBatchDraw();
 

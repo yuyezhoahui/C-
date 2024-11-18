@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|solutionrelative:TutorialZero_3\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\head.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|solutionrelative:TutorialZero_3\\head.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "head.h",
+              "DocumentMoniker": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\head.h",
+              "RelativeDocumentMoniker": "TutorialZero_3\\head.h",
+              "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\head.h",
+              "RelativeToolTip": "TutorialZero_3\\head.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-18T14:02:18.993Z",
+              "EditorCaption": ""
             }
           ]
         }
@@ -28,12 +45,12 @@
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
-        "Id": "1a81bbd2-1e98-4427-bae0-7ef996b67ad0",
+        "Id": "3b6a142a-99fb-4cda-8dbb-8af00bc3eec7",
         "Display": 1,
         "X": -4,
-        "Y": 634,
+        "Y": 453,
         "Width": 728,
-        "Height": 602,
+        "Height": 783,
         "WindowState": 2
       },
       "DocumentGroups": [
@@ -49,7 +66,7 @@
               "RelativeDocumentMoniker": "TutorialZero_3\\sourse.cpp",
               "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\sourse.cpp",
               "RelativeToolTip": "TutorialZero_3\\sourse.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwDsAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-17T12:50:24.309Z",
               "EditorCaption": ""
