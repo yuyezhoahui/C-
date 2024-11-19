@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|solutionrelative:TutorialZero_3\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\head.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|solutionrelative:TutorialZero_3\\head.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C911E6F9-3BAC-4A5E-A3BB-6CD8D7B698E1}|TutorialZero_3\\TutorialZero_3.vcxproj|solutionrelative:TutorialZero_3\\sourse.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,13 +26,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "head.h",
               "DocumentMoniker": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\head.h",
               "RelativeDocumentMoniker": "TutorialZero_3\\head.h",
               "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\head.h",
               "RelativeToolTip": "TutorialZero_3\\head.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-18T14:02:18.993Z",
               "EditorCaption": ""
@@ -45,7 +45,7 @@
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
-        "Id": "3b6a142a-99fb-4cda-8dbb-8af00bc3eec7",
+        "Id": "b3608ab1-6223-4211-a9b2-a225d721fa93",
         "Display": 1,
         "X": -4,
         "Y": 453,
@@ -60,13 +60,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "sourse.cpp",
               "DocumentMoniker": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\sourse.cpp",
               "RelativeDocumentMoniker": "TutorialZero_3\\sourse.cpp",
               "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\sourse.cpp",
               "RelativeToolTip": "TutorialZero_3\\sourse.cpp",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwDgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAAABkBAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-17T12:50:24.309Z",
               "EditorCaption": ""
