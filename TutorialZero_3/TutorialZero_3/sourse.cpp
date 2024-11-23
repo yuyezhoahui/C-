@@ -338,6 +338,17 @@ public:
 	}
 
 
+	void Hurt()
+	{
+		alive = false;
+	}
+
+	bool CheckAlive()
+	{
+		return alive;
+	}
+
+
 	~Enemy()
 	{
 		delete anim_left;
@@ -356,10 +367,21 @@ private:
 	Animation* anim_right;
 	POINT position = {0,0};
 	bool facing_left = false;
+	bool alive = true;
 };
 
+void DrawPlayerScore(int score)
+{
+	static TCHAR text[64];
+	_stprintf_s(text,_T("SCORE:%d"),score);
+
+	setbkmode(TRANSPARENT);
+	settextcolor(RGB(255,85,185));
+	outtextxy(10,10,text);
+}
 
 #pragma comment(lib, "MSIMG32.LIB")
+#pragma comment(lib,"Winmm.lib")
 
 inline void putimage_alpha(int x, int y, IMAGE* img)
 {
@@ -420,11 +442,17 @@ int main()
 {
 	initgraph(1280,720);//绘制窗口大小
 
+	mciSendString(_T("open mus/bgm.mp3 alias bgm"), NULL, 0, NULL);//加载音乐
+	mciSendString(_T("open mus/hit.wav alias hit"), NULL, 0, NULL);
+
+	mciSendString(_T("play bgm repeat from 0"),NULL,0,NULL);//博放音乐
+
 	bool running = true;
 
 	ExMessage msg;//输入列表
 	IMAGE img_background;
 	Player player;
+	int score = 0;//记录玩家得分
 	std::vector<Enemy*> enemy_list;//敌人列表
 	std::vector<Bullet> bullet_list(3);//子弹列表
 
@@ -460,9 +488,38 @@ int main()
 		{
 			if (enemy->CheckPlayerCollision(player))
 			{
+				static TCHAR text[128];
+				_stprintf_s(text,_T("Final Score: %d"),score);
 				MessageBox(GetHWnd(), _T("You Lose"), _T("Game Over"), MB_OK);
 				running = false;
 				break;
+			}
+
+		}
+
+		//检测子弹与敌人的碰撞
+		for (Enemy* enemy : enemy_list)
+		{
+			for (const Bullet& bullet : bullet_list)
+			{
+				if (enemy->CheckBulletCollision(bullet))
+				{
+					mciSendString(_T("play hit from 0"), NULL, 0, NULL);//博放音乐
+					enemy->Hurt();
+					score++;
+				}
+			}
+		}
+
+		//移除生命值归零的敌人
+		for (size_t i = 0; i < enemy_list.size(); i++)
+		{
+			Enemy* enemy = enemy_list[i];
+			if (!enemy->CheckAlive())
+			{
+				std::swap(enemy_list[i],enemy_list.back());//与对末尾的元素交换位置
+				enemy_list.pop_back();//讲最后一个元素从vector中弹出
+				delete enemy;
 			}
 
 		}
@@ -480,6 +537,8 @@ int main()
 		{
 			bullet.Draw();
 		}
+
+		DrawPlayerScore(score);//绘制玩家得分
 
 		FlushBatchDraw();
 
