@@ -19,33 +19,53 @@ IMAGE img_shadow;
 
 
 
-
-//动画类
-class Animation
+//表示动画所使用的图集
+class Atlas
 {
 public:
-	Animation(LPCTSTR path,int num,int interval)
+	Atlas(LPCTSTR path, int num)
 	{
-		interval_ms = interval;
-
 		TCHAR path_file[256];
-		for (size_t i = 0; i < num ;i++)
+		for (size_t i = 0; i < num; i++)
 		{
 			_stprintf_s(path_file, path, i);
-
 			IMAGE* frame = new IMAGE();
-			loadimage(frame,path_file);
+			loadimage(frame, path_file);
 			frame_list.push_back(frame);
 		}
 	}
 
-	~Animation()
+	~Atlas()
 	{
 		for (size_t i = 0; i < frame_list.size(); i++)
 		{
 			delete frame_list[i];
 		}
 	}
+
+public:
+	std::vector<IMAGE*> frame_list;
+};
+
+Atlas* atlas_player_left;
+Atlas* atlas_player_right;
+Atlas* atlas_enemy_left;
+Atlas* atlas_enemy_right;
+
+
+//动画类
+class Animation
+{
+public:
+	Animation(Atlas* atlas,int interval)
+	{
+		anim_atlas = atlas;
+		interval_ms = interval;
+		
+	}
+
+	~Animation() = default;
+	
 
 	void Play(int x,int y,int delta /*表示距离上一次调用函数时间过去了多久*/)
 	{
@@ -54,13 +74,13 @@ public:
 		if (timer >= interval_ms)
 		{
 
-			idx_frame = (idx_frame + 1) % frame_list.size();
+			idx_frame = (idx_frame + 1) % anim_atlas->frame_list.size();
 			timer = 0;
 
 			
 
 		}
-		putimage_alpha(x, y, frame_list[idx_frame]);
+		putimage_alpha(x, y, anim_atlas->frame_list[idx_frame]);
 		
 	}
 
@@ -68,7 +88,9 @@ private:
 	int timer = 0;//动画计时器
 	int idx_frame = 0;//动画帧索引
 	int interval_ms = 0;//帧间隔
-	std::vector<IMAGE*> frame_list;
+	
+private:
+	Atlas* anim_atlas;
 };
 
 
@@ -102,8 +124,8 @@ public:
 	Player()
 	{
 		loadimage(&img_shadow, _T("img/shadow_player.png"));
-		anim_left = new Animation(_T("img/paimon_left_%d.png"), 6, 45);
-		anim_right = new Animation(_T("img/paimon_right_%d.png"), 6, 45);
+		anim_left = new Animation(atlas_player_left, 45);
+		anim_right = new Animation(atlas_player_right, 45);
 	}
 
 	~Player()
@@ -238,8 +260,8 @@ public:
 	Enemy()
 	{
 		loadimage(&img_shadow, _T("img/shadow_enemy.png"));
-		anim_left = new Animation(_T("img/boar_left_%d.png"), 6, 45);
-		anim_right = new Animation(_T("img/boar_right_%d.png"), 6, 45);
+		anim_left = new Animation(atlas_enemy_left, 45);
+		anim_right = new Animation(atlas_enemy_right, 45);
 
 
 		// 敌人生成边界
@@ -442,6 +464,13 @@ int main()
 {
 	initgraph(1280,720);//绘制窗口大小
 
+
+	atlas_player_left = new Atlas(_T("img/paimon_left_%d.png"), 6);
+	atlas_player_right = new Atlas(_T("img/paimon_right_%d.png"), 6);
+	atlas_enemy_left = new Atlas(_T("img/boar_left_%d.png"), 6);
+	atlas_enemy_right = new Atlas(_T("img/boar_right_%d.png"), 6);
+
+
 	mciSendString(_T("open mus/bgm.mp3 alias bgm"), NULL, 0, NULL);//加载音乐
 	mciSendString(_T("open mus/hit.wav alias hit"), NULL, 0, NULL);
 
@@ -550,6 +579,11 @@ int main()
 		}
 
 	}
+
+	delete atlas_player_left;
+	delete atlas_player_right;
+	delete atlas_enemy_left;
+	delete atlas_enemy_right;
 
 	EndBatchDraw();
 
