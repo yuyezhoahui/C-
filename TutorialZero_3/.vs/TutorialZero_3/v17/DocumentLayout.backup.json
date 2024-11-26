@@ -18,12 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -32,10 +28,14 @@
               "RelativeDocumentMoniker": "TutorialZero_3\\head.h",
               "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\head.h",
               "RelativeToolTip": "TutorialZero_3\\head.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-18T14:02:18.993Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
@@ -66,7 +66,7 @@
               "RelativeDocumentMoniker": "TutorialZero_3\\sourse.cpp",
               "ToolTip": "D:\\C\u002B\u002BGameLearn\\01\\C-\\TutorialZero_3\\TutorialZero_3\\sourse.cpp",
               "RelativeToolTip": "TutorialZero_3\\sourse.cpp",
-              "ViewState": "AgIAAJcBAAAAAAAAAAAAANYBAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAMQCAAAAAAAAAAAAAPQCAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-17T12:50:24.309Z",
               "EditorCaption": ""
